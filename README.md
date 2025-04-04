@@ -2,4 +2,4 @@
 ## Code
 The new code for E<sup>3</sup>NeRF will be released soon.
 ## Dataset
-The new synthetic datasets and real-world datasets will be released soon.
+The new datasets can be download [here](https://drive.google.com/drive/folders/1ZJsVq7rGEHd4ZIYPzdtrBPXrlckgE7Fa?usp=sharing).
