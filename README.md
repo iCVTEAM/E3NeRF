@@ -4,7 +4,7 @@ The new code for E<sup>3</sup>NeRF will be released soon.
 ## Dataset
 
 ### Real-World-Challenge Dataset
-We provide both original data and processed data for E3NEeRF training. Please down load them [here](https://drive.google.com/file/d/1lDxf6mAvgNfWm0XIXT7BCji9tSVjyBDS/view?usp=sharing).
+We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing).
 
 **Original Data:** 
 The original data consist of three folders in each scene's folder. "images"-The blurry images for training; "events"-The events corresponding to the blurry images; "gt"-The ground truth sharp images for testing.
