@@ -1,6 +1,11 @@
-# E<sup>3</sup>NeRF: Efficient Event-Enhanced Neural Radiance Fields from Blurry Images
+# Code for E<sup>3</sup>NeRF: Efficient Event-Enhanced Neural Radiance Fields from Blurry Images
+This is an official PyTorch implementation of the E<sup>3</sup>NeRF. Click [here](https://icvteam.github.io/E3NeRF.html) to see the video and supplementary materials in our project website.
+
+## Method Overview
+
+
+
 ## Code
-The new code for E<sup>3</sup>NeRF will be released soon.
 
 
 
