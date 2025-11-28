@@ -2,8 +2,15 @@
 This is an official PyTorch implementation of the E<sup>3</sup>NeRF. Click [here](https://icvteam.github.io/E3NeRF.html) to see the video and supplementary materials in our project website.
 
 ## Method Overview
+Our E<sup>3</sup>NeRF further leverage the spatial-temporal blur prior in event stream to realize more effecient ERGB-based deblurring NeRF reconstruction.
+![](./figures/motivation.png)
 
+The framework of E<sup>3</sup>NeRF is based on E<sup>2</sup>NeRF, with the addition of "Event-Guided Temporal Blur Uniform Binning", "Event-Guided Spatial Blur Locating", and "Motion-Guided Event Splitting".
+![](./figures/method.png)
 
+## Installation
+The code is based on [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch) and use the same environment.
+Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch) for the environment installation.
 
 ## Code
 
