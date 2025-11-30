@@ -15,7 +15,7 @@ Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch)
 ## Code
 
 ### Real-World-Blur Dataset
-Please download the Real-World-Challenge dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+Please download the Real-World-Blur dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
 ```
 python run_nerf_real_world_blur.py --config config_real_world_blur.txt
