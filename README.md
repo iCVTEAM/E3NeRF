@@ -14,6 +14,13 @@ Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch)
 
 ## Code
 
+### Real-World-Blur Dataset
+Please download the Real-World-Challenge dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+
+```
+python run_nerf_real_world_blur.py --config config_real_world_blur.txt
+```
+
 ### Real-World-Challenge Dataset
 Please download the Real-World-Challenge dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
@@ -38,9 +45,9 @@ Compared to Original Data, Processed Data includes events.pt, frames_weights.npy
 **Generate Processed Data with Original Data:**
 
 First, download the original data and put it in the dataset folder.
-Second, run data/data_preprocess_real.py to generate the events.pt, frames_weights.npy, event_mask.npy, and images for pose estimation.
+Second, run data/data_preprocess_real_world_challenge.py to generate the events.pt, frames_weights.npy, event_mask.npy, and images for pose estimation.
 Third, use colmap to estimate the poses of images in the "images_pose" folder.
-Finally, run data/data_preprocess_real_imgs2pose.py to generate the pose_bounds.npy for training.
+Finally, run data/data_preprocess_imgs2pose.py to generate the pose_bounds.npy for training.
 
 ## Citation
 
