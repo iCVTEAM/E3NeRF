@@ -602,9 +602,8 @@ def train():
             inter_num = args.bin_num + 1
 
         test_poses = poses[int(inter_num/2) : images.shape[0] * inter_num : inter_num]
-        test_poses_novel = poses[images.shape[0] * inter_num : ]
+        test_poses_novel = render_poses
         poses = poses[ : images.shape[0] * inter_num].reshape(images.shape[0], inter_num, 3, 4)
-        render_poses = pose_interpolation_llff(test_poses_novel, 5)
 
         print('Loaded llff', images.shape, render_poses.shape, hwf, args.datadir)
 

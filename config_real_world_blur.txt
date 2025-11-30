@@ -1,6 +1,6 @@
-expname = lab
-basedir = ./logs_real_world_challenge
-datadir = ./dataset/Real-World-Challenge/lab
+expname = lego
+basedir = ./logs_real_world_blur
+datadir = ./dataset/Real-World-Blur/lego
 dataset_type = ellff
 
 factor = 1
