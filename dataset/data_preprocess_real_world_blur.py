@@ -100,12 +100,12 @@ def torch2mask(basedir, view_num, bin_num, height, width):
 
 
 # change the scene name here
-scene = "lab"
+scene = "toys"
 
-basedir = "./Real-World-Challenge/{0}/".format(scene)
+basedir = "./Real-World-Blur/{0}/".format(scene)
 height = 260    # resolution h
 width = 346     # resolution w
-views_num = 16  # number of training views
+views_num = 30  # number of training views
 
 
 
@@ -157,21 +157,6 @@ for i in range(views_num):
                 shutil.copy(basedir + "images_pose_12/{0:03d}.jpg".format(flag + i * 13),
                             basedir + "images_pose/{0:03d}.jpg".format(j + i * 17))
             flag = flag + 1
-
-# move the gt sharp images into images_pose for jointly training and test pose estimation
-for i in range(28):
-    shutil.copy(basedir + "gt/{0:03d}.jpg".format(i), basedir + "images_pose_4/{0:03d}.jpg".format(i + views_num * 5))
-    shutil.copy(basedir + "gt/{0:03d}.jpg".format(i), basedir + "images_pose_8/{0:03d}.jpg".format(i + views_num * 9))
-    shutil.copy(basedir + "gt/{0:03d}.jpg".format(i), basedir + "images_pose_12/{0:03d}.jpg".format(i + views_num * 13))
-    if scene == "corridor":
-        # for the low-light corridor scene, increase the image brightness to facilitate the pose estimation
-        img = cv2.imread(basedir + "gt/{0:03d}.jpg".format(i))
-        img = img * 1.5
-        img = np.clip(img, 0, 254)
-        cv2.imwrite(basedir + "images_pose/{0:03d}.jpg".format(i + views_num * 17), img)
-    else:
-        shutil.copy(basedir + "gt/{0:03d}.jpg".format(i), basedir + "images_pose/{0:03d}.jpg".format(i + views_num * 17))
-
 
 
 print("Stage 3: Start generating event_mask for the spatial blur prior")
