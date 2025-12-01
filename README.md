@@ -15,14 +15,14 @@ Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch)
 ## Code
 
 ### Real-World-Blur Dataset
-Please download the Real-World-Blur dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+Please download the [Real-World-Blur](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing) dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
 ```
 python run_nerf_real_world_blur.py --config config_real_world_blur.txt
 ```
 
 ### Real-World-Challenge Dataset
-Please download the Real-World-Challenge dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+Please download the [Real-World-Challenge](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing) dataset and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
 ```
 python run_nerf_real_world_challenge.py --config config_real_world_challenge.txt
@@ -30,6 +30,24 @@ python run_nerf_real_world_challenge.py --config config_real_world_challenge.txt
 
 
 ## Dataset
+
+### Real-World-Blur Dataset
+We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing).
+
+**Original Data:** 
+
+The original data consist of two folders in each scene's folder. "images"-The blurry images for training; "events"-The events corresponding to the blurry images.
+
+**Processed Data:**
+
+Compared to Original Data, Processed Data includes events.pt, frames_weights.npy, event_mask.npy, and pose_bounds.npy, which facilitates the event loss calculation, provides temporal and spatial blur prior, provides poses for training and testing, respectively.
+
+**Generate Processed Data with Original Data:**
+
+First, download the original data and put it in the dataset folder.
+Second, run data/data_preprocess_real_world_blur.py to generate the events.pt, frames_weights.npy, event_mask.npy, and images for pose estimation.
+Third, use colmap to estimate the poses of images in the "images_pose" folder.
+Finally, run data/data_preprocess_imgs2poses.py to generate the pose_bounds.npy for training.
 
 ### Real-World-Challenge Dataset
 We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing).
@@ -47,7 +65,7 @@ Compared to Original Data, Processed Data includes events.pt, frames_weights.npy
 First, download the original data and put it in the dataset folder.
 Second, run data/data_preprocess_real_world_challenge.py to generate the events.pt, frames_weights.npy, event_mask.npy, and images for pose estimation.
 Third, use colmap to estimate the poses of images in the "images_pose" folder.
-Finally, run data/data_preprocess_imgs2pose.py to generate the pose_bounds.npy for training.
+Finally, run data/data_preprocess_imgs2poses.py to generate the pose_bounds.npy for training.
 
 ## Citation
 
