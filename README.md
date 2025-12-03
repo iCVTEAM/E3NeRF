@@ -14,6 +14,8 @@ Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch)
 
 ## Code
 
+
+
 ### Real-World-Blur Dataset
 Please download the [Real-World-Blur](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing) dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
@@ -30,6 +32,9 @@ python run_nerf_real_world_challenge.py --config config_real_world_challenge.txt
 
 
 ## Dataset
+
+### Synthetic Dataset
+We provide the original blender files [here](https://drive.google.com/file/d/1LMl-b0-ei5GkClmWetlDtJR8lzN8ie6Z/view?usp=sharing) to generate the original data for training and testing. Please first install the [Camera Shakify Plugin](https://github.com/EatTheFuture/camera_shakify?tab=readme-ov-file) and then run the script
 
 ### Real-World-Blur Dataset
 We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing).
