@@ -546,11 +546,11 @@ def config_parser():
                         help='frequency of tensorboard image logging')
     parser.add_argument("--i_val",     type=int, default=1000,
                         help='frequency of render pose[0] image')
-    parser.add_argument("--i_weights", type=int, default=10000,
+    parser.add_argument("--i_weights", type=int, default=50000,
                         help='frequency of weight ckpt saving')
-    parser.add_argument("--i_testset", type=int, default=10000,
+    parser.add_argument("--i_testset", type=int, default=200000,
                         help='frequency of testset saving')
-    parser.add_argument("--i_video",   type=int, default=10000,
+    parser.add_argument("--i_video",   type=int, default=200000,
                         help='frequency of render_poses video saving')
 
     return parser
@@ -574,7 +574,7 @@ def train():
             print('Loaded blender', images.shape, poses_4.shape, poses_8.shape, poses_12.shape, render_poses.shape, test_poses.shape, hwf, args.datadir)
             poses = [poses_4, poses_8, poses_12]
         else:
-            images, poses, render_poses, test_poses, test_poses_novel, hwf  = load_blender_severe(args.datadir, args.bin_num)
+            images, poses, render_poses, test_poses, test_poses_novel, hwf  = load_blender_data(args.datadir, args.bin_num)
             print('Loaded blender', images.shape, poses.shape, render_poses.shape, test_poses.shape, hwf, args.datadir)
 
         near = 2.
