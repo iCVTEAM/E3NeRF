@@ -14,17 +14,24 @@ Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch)
 
 ## Code
 
+### Synthetic Dataset
 
+Please download the processed [Synthetic Dataset](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing) and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+
+```
+python run_nerf_synthetic_slight.py --config config_synthetic_slight.txt
+python run_nerf_synthetic_severe.py --config config_synthetic_severe.txt
+```
 
 ### Real-World-Blur Dataset
-Please download the [Real-World-Blur](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing) dataset below and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+Please download the processed [Real-World-Blur](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing) dataset and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
 ```
 python run_nerf_real_world_blur.py --config config_real_world_blur.txt
 ```
 
 ### Real-World-Challenge Dataset
-Please download the [Real-World-Challenge](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing) dataset and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+Please download the processed [Real-World-Challenge](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing) dataset and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
 ```
 python run_nerf_real_world_challenge.py --config config_real_world_challenge.txt
