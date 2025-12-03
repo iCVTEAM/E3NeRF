@@ -1,0 +1,20 @@
+expname = chair
+basedir = ./logs_synthetic_slight
+datadir = ./dataset/Synthetic-Slight-Processed/chair
+dataset_type = blender
+
+half_res = false
+no_batching = True
+lrate_decay = 500
+precrop_iters = 500
+
+N_rand = 1024
+N_samples = 64
+N_importance = 128
+
+use_viewdirs = True
+white_bkgd = True
+
+bin_num = 6
+pre_iters = 0
+bin_num_evaluater = False
