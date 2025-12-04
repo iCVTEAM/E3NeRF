@@ -39,7 +39,7 @@ def load_blender_data(basedir, bin_num):
         meta = json.load(fp)
 
     # split time/pose points
-    poses_num = np.loadtxt(os.path.join(basedir, 'poses_num.npy'))
+    poses_num = np.loadtxt(os.path.join(basedir, 'poses_index_all.npy'))
 
     train_imgs = []
     train_poses = []
