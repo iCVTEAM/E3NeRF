@@ -59,7 +59,9 @@ The Processed Data includes "events.pt", "frames_weights.npy", "event_mask.npy",
 **Generate Processed Data with Original Data:**
 
 First, download the original data and put it in the "dataset" folder.
-Second, run "dataset/data_preprocess_synthetic_slight.py" and "dataset/data_preprocess_synthetic_severe.py" to generate the "events.pt", "frames_weights.npy", "event_mask.npy", "poses_index_all.npy", and the synthetic blurry images for slight shake and severe shake data, respectively.
+Second, download the "SuperSloMo39.ckpt" [here](https://drive.google.com/file/d/1BkiTOPMMqHzSn3EO5gptOJkicUBi1nMP/view?usp=sharing) and put it in the "dataset/utils/v2e/input" folder.
+Third, install the "v2e" environment follow its official [guidence](https://github.com/SensorsINI/v2e).
+Finally, run "dataset/data_preprocess_synthetic_slight.py" and "dataset/data_preprocess_synthetic_severe.py" to generate the "events.pt", "frames_weights.npy", "event_mask.npy", "poses_index_all.npy", and the synthetic blurry images for slight shake and severe shake data, respectively.
 
 
 ### Real-World-Blur Dataset
