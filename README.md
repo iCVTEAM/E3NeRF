@@ -2,7 +2,7 @@
 This is an official PyTorch implementation of the E<sup>3</sup>NeRF. Click [here](https://icvteam.github.io/E3NeRF.html) to see the video and supplementary materials in our project website.
 
 ## Method Overview
-Our E<sup>3</sup>NeRF further leverage the spatial-temporal blur prior in event stream to realize more effecient ERGB-based deblurring NeRF reconstruction.
+Our E<sup>3</sup>NeRF further leverage the spatial-temporal blur prior in event stream to realize more efficient ERGB-based deblurring NeRF reconstruction.
 ![](./figures/motivation.png)
 
 The framework of E<sup>3</sup>NeRF is based on E<sup>2</sup>NeRF, with the addition of "Event-Guided Temporal Blur Uniform Binning", "Event-Guided Spatial Blur Locating", and "Motion-Guided Event Splitting".
@@ -16,7 +16,7 @@ Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch)
 
 ### Synthetic Dataset
 
-Please download the processed [Synthetic Dataset](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing) and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
+Please download the processed [Synthetic Dataset](https://drive.google.com/drive/folders/1xoaMSgiKt4rB3sW5iKh6jUPmyWF9MdH2?usp=sharing) and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model with the slight shake data and severe shake data, respectively.
 
 ```
 python run_nerf_synthetic_slight.py --config config_synthetic_slight.txt
@@ -38,10 +38,29 @@ python run_nerf_real_world_challenge.py --config config_real_world_challenge.txt
 ```
 
 
+
 ## Dataset
 
 ### Synthetic Dataset
-We provide the original blender files [here](https://drive.google.com/file/d/1LMl-b0-ei5GkClmWetlDtJR8lzN8ie6Z/view?usp=sharing) to generate the original data for training and testing. Please first install the [Camera Shakify Plugin](https://github.com/EatTheFuture/camera_shakify?tab=readme-ov-file) and then run the script
+We provide the original blender data, original data, and processed data of synthetic slight/severe shake data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1xoaMSgiKt4rB3sW5iKh6jUPmyWF9MdH2?usp=sharing).
+
+**Blender Data:**
+
+We provide the original blender files to generate the original data for training and testing. Please first install the [Camera Shakify Plugin](https://github.com/EatTheFuture/camera_shakify?tab=readme-ov-file) and then run the script with blender.
+
+**Original Data:**
+
+The original data of each scene contains original images of each view in the "r_xx" folder and the corresponding camera pose data in the "transforms.json" file.
+
+**Processed Data:**
+
+The Processed Data includes "events.pt", "frames_weights.npy", "event_mask.npy", and "poses_index_all.npy", which facilitates the event loss calculation, provides temporal and spatial blur prior, provides poses index for training and testing, respectively. It also contains the synthetic blurry images for training in the "train" folder.
+
+**Generate Processed Data with Original Data:**
+
+First, download the original data and put it in the "dataset" folder.
+Second, run "dataset/data_preprocess_synthetic_slight.py" and "dataset/data_preprocess_synthetic_severe.py" to generate the "events.pt", "frames_weights.npy", "event_mask.npy", "poses_index_all.npy", and the synthetic blurry images for slight shake and severe shake data, respectively.
+
 
 ### Real-World-Blur Dataset
 We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing).
@@ -52,14 +71,14 @@ The original data consist of two folders in each scene's folder. "images"-The bl
 
 **Processed Data:**
 
-Compared to Original Data, Processed Data includes events.pt, frames_weights.npy, event_mask.npy, and pose_bounds.npy, which facilitates the event loss calculation, provides temporal and spatial blur prior, provides poses for training and testing, respectively.
+Compared to Original Data, Processed Data includes "events.pt", "frames_weights.npy", "event_mask.npy", and "pose_bounds.npy", which facilitates the event loss calculation, provides temporal and spatial blur prior, provides poses for training and testing, respectively.
 
 **Generate Processed Data with Original Data:**
 
-First, download the original data and put it in the dataset folder.
-Second, run data/data_preprocess_real_world_blur.py to generate the events.pt, frames_weights.npy, event_mask.npy, and images for pose estimation.
+First, download the original data and put it in the "dataset" folder.
+Second, run "dataset/data_preprocess_real_world_blur.py" to generate the "events.pt", "frames_weights.npy", "event_mask.npy", and images for pose estimation.
 Third, use colmap to estimate the poses of images in the "images_pose" folder.
-Finally, run data/data_preprocess_imgs2poses.py to generate the pose_bounds.npy for training.
+Finally, run "dataset/data_preprocess_imgs2poses.py" to generate the "pose_bounds.npy" for training.
 
 ### Real-World-Challenge Dataset
 We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing).
@@ -70,14 +89,14 @@ The original data consist of three folders in each scene's folder. "images"-The 
 
 **Processed Data:**
 
-Compared to Original Data, Processed Data includes events.pt, frames_weights.npy, event_mask.npy, and pose_bounds.npy, which facilitates the event loss calculation, provides temporal and spatial blur prior, provides poses for training and testing, respectively.
+Compared to Original Data, Processed Data includes "events.pt", "frames_weights.npy", "event_mask.npy", and "pose_bounds.npy", which facilitates the event loss calculation, provides temporal and spatial blur prior, provides poses for training and testing, respectively.
 
 **Generate Processed Data with Original Data:**
 
 First, download the original data and put it in the dataset folder.
-Second, run data/data_preprocess_real_world_challenge.py to generate the events.pt, frames_weights.npy, event_mask.npy, and images for pose estimation.
+Second, run "dataset/data_preprocess_real_world_challenge.py" to generate the "events.pt", "frames_weights.npy", "event_mask.npy", and images for pose estimation.
 Third, use colmap to estimate the poses of images in the "images_pose" folder.
-Finally, run data/data_preprocess_imgs2poses.py to generate the pose_bounds.npy for training.
+Finally, run "dataset/data_preprocess_imgs2poses.py" to generate the “pose_bounds.npy” for training.
 
 ## Citation
 
