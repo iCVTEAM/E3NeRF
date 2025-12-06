@@ -1,6 +1,6 @@
-expname = chair
+expname = lego
 basedir = ./logs_synthetic_slight
-datadir = ./dataset/Synthetic-Slight-Processed/chair
+datadir = ./dataset/Synthetic-Slight-Processed/lego
 dataset_type = blender
 
 half_res = false
@@ -15,6 +15,6 @@ N_importance = 128
 use_viewdirs = True
 white_bkgd = True
 
-bin_num = 6
+bin_num = 4
 pre_iters = 0
 bin_num_evaluater = False

@@ -1,6 +1,6 @@
-expname = chair
+expname = lego
 basedir = ./logs_synthetic_severe
-datadir = ./dataset/Synthetic-Severe-Processed/chair
+datadir = ./dataset/Synthetic-Severe-Processed/lego
 dataset_type = blender
 
 half_res = false
