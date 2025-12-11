@@ -1,20 +1,20 @@
 # Code for E<sup>3</sup>NeRF: Efficient Event-Enhanced Neural Radiance Fields from Blurry Images
 This is an official PyTorch implementation of the E<sup>3</sup>NeRF. Click [here](https://icvteam.github.io/E3NeRF.html) to see the video and supplementary materials in our project website.
 
-## Method Overview
+## 1. Method Overview
 Our E<sup>3</sup>NeRF further leverage the spatial-temporal blur prior in event stream to realize more efficient ERGB-based deblurring NeRF reconstruction.
 ![](./figures/motivation.png)
 
 The framework of E<sup>3</sup>NeRF is based on E<sup>2</sup>NeRF, with the addition of "Event-Guided Temporal Blur Uniform Binning", "Event-Guided Spatial Blur Locating", and "Motion-Guided Event Splitting".
 ![](./figures/method.png)
 
-## Installation
+## 2. Installation
 The code is based on [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch) and use the same environment.
 Please refer to its github [website](https://github.com/yenchenlin/nerf-pytorch) for the environment installation.
 
-## Code
+## 3. Code
 
-### Synthetic Dataset
+### 3.1 Synthetic Dataset
 
 Please download the processed [Synthetic Dataset](https://drive.google.com/drive/folders/1xoaMSgiKt4rB3sW5iKh6jUPmyWF9MdH2?usp=sharing) and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model with the slight shake data and severe shake data, respectively.
 
@@ -23,14 +23,14 @@ python run_nerf_synthetic_slight.py --config config_synthetic_slight.txt
 python run_nerf_synthetic_severe.py --config config_synthetic_severe.txt
 ```
 
-### Real-World-Blur Dataset
+### 3.2 Real-World-Blur Dataset
 Please download the processed [Real-World-Blur](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing) dataset and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
 ```
 python run_nerf_real_world_blur.py --config config_real_world_blur.txt
 ```
 
-### Real-World-Challenge Dataset
+### 3.3 Real-World-Challenge Dataset
 Please download the processed [Real-World-Challenge](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing) dataset and put it into the corresponding file (./dataset/). Then you can use the command below to train and test the model.
 
 ```
@@ -39,9 +39,9 @@ python run_nerf_real_world_challenge.py --config config_real_world_challenge.txt
 
 
 
-## Dataset
+## 4. Dataset
 
-### Synthetic Dataset
+### 4.1 Synthetic Dataset
 We provide the original blender data, original data, and processed data of synthetic slight/severe shake data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1xoaMSgiKt4rB3sW5iKh6jUPmyWF9MdH2?usp=sharing).
 
 **Blender Data:**
@@ -64,7 +64,7 @@ Third, install the "v2e" environment follow its official [guidence](https://gith
 Finally, run "dataset/data_preprocess_synthetic_slight.py" and "dataset/data_preprocess_synthetic_severe.py" to generate the "events.pt", "frames_weights.npy", "event_mask.npy", "poses_index_all.npy", and the synthetic blurry images for slight shake and severe shake data, respectively.
 
 
-### Real-World-Blur Dataset
+### 4.2 Real-World-Blur Dataset
 We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1ca_IJxOoWH2wSgM1nSWeJIbh6MwdSGFO?usp=sharing).
 
 **Original Data:** 
@@ -82,7 +82,7 @@ Second, run "dataset/data_preprocess_real_world_blur.py" to generate the "events
 Third, use colmap to estimate the poses of images in the "images_pose" folder.
 Finally, run "dataset/data_preprocess_imgs2poses.py" to generate the "pose_bounds.npy" for training.
 
-### Real-World-Challenge Dataset
+### 4.3 Real-World-Challenge Dataset
 We provide both original data and processed data for E<sup>3</sup>NEeRF training. Please down load them [here](https://drive.google.com/drive/folders/1iy0266P29K3O2PexX1obhtEPo4fqBKDY?usp=sharing).
 
 **Original Data:** 
