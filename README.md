@@ -122,4 +122,4 @@ If you find this useful, please consider citing our paper:
 
 ## Acknowledgment
 
-The overall framework are derived from [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch/) and [E<sup>2</sup>NeRF](). We appreciate the effort of the contributors to these repositories.
+The overall framework are derived from [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch/) and [E<sup>2</sup>NeRF](https://github.com/iCVTEAM/E2NeRF). We appreciate the effort of the contributors to these repositories.
